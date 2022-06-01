@@ -1,0 +1,9 @@
+<div *ngIf="!viewLetter; else Letters">
+    <img  src="{{photoUrl}}" alt="" [style]="{'height': size, 'width': size}" (load)="loadingOk()" (error)="loadingFailed()" class="rounded-circle img-thumbnail">
+</div>
+
+<ng-template #Letters>
+    <div  [style]="{'height': size, 'width': size}" class="img-thumbnail d-flex justify-content-center align-items-center rounded-circle py-auto">
+        <p class="lead m-0 p-0 fs-3">{{displayName[0] | uppercase}}</p>
+    </div>
+</ng-template>

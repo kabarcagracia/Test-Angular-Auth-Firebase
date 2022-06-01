@@ -1,0 +1,20 @@
+#contenedor {
+    min-height: 100vh;
+}
+
+#MyImage {
+    position: relative;
+    margin: 20px auto 0;
+    width: 100%;
+    max-width: 400px;
+}
+#theImage {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+#myButton {
+    position: absolute;
+    left: 0%;
+    top: 50%;
+}

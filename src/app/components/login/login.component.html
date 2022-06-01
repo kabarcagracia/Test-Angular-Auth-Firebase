@@ -1,0 +1,73 @@
+<div class="main-content d-flex justify-content-center align-content-center flex-column px-4">
+    <div class="row d-flex justify-content-center">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex flex-column justify-content-center">
+            <h6 class="display-6 text-center mt-3"> Bienvenido</h6>
+            <p class="lead text-center mt-2">Inicia sesión con tu cuenta para continuar.</p>
+            <img class="mx-auto my-4" loading="lazy" src="assets/angular-logo.png" alt="" width="300">
+            <form [formGroup]="loginForm">
+                <div class="form-floating">
+                    <input type="email" class="form-control" [ngClass]="viewMessageErrorData && recoverPassword? 'is-invalid' : 'valid'" id="emailAddressLogin" placeholder="name@example.com" formControlName="email">
+                    <label for="emailAddressLogin">Correo Electrónico</label>
+                </div>
+                <small class="text-danger" *ngIf="viewMessageErrorData">
+                    <i class="bi bi-x-lg me-1 bold"></i>
+                    la dirección y/o contraseña son invalidas.
+                </small>
+                <small class="text-danger" *ngIf="recoverPassword">
+                    <i class="bi bi-x-lg me-1 bold"></i>
+                    Escribe tu correo electrónico primero.
+                </small> 
+                <div class="form-floating input-group my-4">
+                    <input type="{{ viewPassword ? 'text' : 'password' }}" class="form-control" id="passwordLogin" placeholder="Password" formControlName="password">
+                    <label for="passwordLogin">Contraseña</label>
+                    <span class="input-group-text">
+                        <a class="btn btn-transparent p-0 " (click)="toggleViewPwd()">
+                            <i class="bi {{ viewPassword ? 'bi-eye-slash' : 'bi-eye' }} fs-4 m-0"></i>
+                        </a>
+                    </span>
+                </div>
+                <div class="text-end mb-4">
+                    <a (click)="recoveryPwd()" class="text-danger" style="cursor: pointer;">¿Olvidaste tu contraseña?</a>
+                </div>
+                <div *ngIf="sendRecoverPassword" class="alert alert-success d-flex align-items-center" role="alert">
+                    <i class="bi bi-check-circle me-3 fs-5"></i>
+                    <div>
+                      Se envio el correo de recuperación de contraseña exitosamente.
+                    </div>
+                </div>
+                <div class="d-grid gap-2" *ngIf="!checkCredentials; else spinnersButton ">
+                    <button class="btn btn-danger {{ loginForm.valid ? '' : 'disabled'}}" type="button" (click)="onSubmit()">
+                        Iniciar Sesión
+                    </button>
+                </div>
+                <ng-template #spinnersButton>
+                    <div class="d-grid gap-2">
+                    <button class="btn btn-danger mb-5" type="button" disabled>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        Iniciando Sesión...
+                      </button>
+                    </div>
+                </ng-template>
+                <div class="separator mt-5"> o </div>
+                <div class="row p-1">
+                    <div class="col-12 p-1 color-button">
+                        <div class="border button-login">
+                            <button class="btn btn-transparent d-flex align-items-center mx-auto" type="button" (click)="loginWithGoogle()">
+                                    <img src="assets/google-svgrepo-com.svg" alt="" width="35px" class="me-4">
+                                    <p class="my-auto fs-6 blockquote">Iniciar sesión con Google</p>         
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-12 p-1 color-button">
+                        <div class="button-login border ">
+                            <button class="btn btn-transparent d-flex align-items-center  mx-auto" type="button" disabled>
+                                <img src="assets/facebook-svgrepo-com.svg" alt="" width="35px" class="me-4">
+                                <p class="my-auto blockquote fs-6">Iniciar sesión con Facebook</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

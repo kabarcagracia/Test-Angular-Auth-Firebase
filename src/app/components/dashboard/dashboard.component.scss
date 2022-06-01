@@ -1,0 +1,46 @@
+$heightContent: 100vh;
+$heightNav: 4em;
+$heightData: calc( 100vh - 4em );
+$color1: #c30e2e;
+$color2: #dd0330;
+
+#main-content {
+    height: $heightContent;
+}
+
+#navbar {
+    height: $heightNav;
+    .offcanvas-header {
+        height: $heightNav;
+    }
+}
+
+#data {
+    min-height: $heightData;
+    background-color: #f1f5f8;
+}
+
+//diseño scroll
+.scroll-fxd::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+.scroll-fxd::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+.scroll-fxd::-webkit-scrollbar-thumb {
+    background-color:  gray;
+    border-radius: 10px;
+}
+
+//diseño off-canvas
+.list-group-item {
+    border: 0px;
+    cursor: pointer;
+}
+.activo {
+    background-color: rgba(63, 29, 213, 0.1);
+    border-radius: 0px 20px 20px 0px;
+    color: rgb(63, 29, 213);
+}

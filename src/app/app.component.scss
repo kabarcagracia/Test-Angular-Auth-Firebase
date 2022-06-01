@@ -1,0 +1,38 @@
+$heightContent: 100vh;
+$heightNav: 4em;
+$heightData: calc( 100vh - 4em );
+
+$color1: #c30e2e;
+$color2: #dd0330;
+
+.main-content {
+    height: $heightContent;
+}
+
+#navbar {
+    height: $heightNav;
+
+    .offcanvas-header {
+        height: $heightNav;
+    }
+}
+
+#data {
+    height: $heightData;
+}
+
+
+a {
+    transition: opacity 0.5s linear;
+}
+
+
+a:hover {
+    .fa.fa-hover-hidden {
+        opacity: 0
+    }
+
+    .fa.fa-hover-show {
+        opacity: 1
+    }
+}

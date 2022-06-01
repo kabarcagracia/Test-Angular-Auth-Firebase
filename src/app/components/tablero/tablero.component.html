@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="display-6 text-center m-5">Test Angular - Firebase Authentication</h1>
+        </div>
+    </div>
+    <div class="row p-1">
+        <div class="col-12 col-md-6 col-lg-4 p-2">
+            <div class="border box-color p-3">
+                <div class="d-flex justify-content-center align-items-center" style="height: 200px;">
+                    <app-photo-account photoUrl="{{data.providerData[0].photoURL}}" displayName="" size="130px"></app-photo-account>
+                </div>
+               <h3 class="text-center text-uppercase display-6 fs-4 mb-4">{{data.providerData[0].displayName}}</h3>
+               <div class="d-flex align-items-center px-2 mb-3">
+                   <div>
+                        <img src="assets/email-svgrepo-com.svg" alt="" style="width: 1.5rem;margin-right: 1rem;">
+                   </div>
+                    <p class="lead my-auto">{{data.providerData[0].email}}</p>
+               </div>
+               <div class="d-flex align-items-center px-2 mb-3">
+                    <div>
+                        <img src="assets/phone-svgrepo-com.svg" alt="" style="width: 1.5rem;margin-right: 1rem;">
+                    </div>
+                    <p class=" lead my-auto">{{data.providerData[0].phoneNumber !== null ? data.providerData[0].phoneNumber: 'sin número'}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 p-2">
+            <div class="border  box-color h-100 d-flex flex-column align-items-center p-3">
+                <h6 class="display-6 fs-4 mb-3">Información Adicional</h6>
+                <table class="table table-borderless px-5">
+                    <tbody class="text-start">
+                        <tr>
+                            <td>Correo Verificado</td>
+                            <td>: <code>{{data.emailVerified}}</code></td>
+                        </tr>
+                        <tr>
+                            <td>Correo Anonimo</td>
+                            <td>: <code>{{data.isAnonymous}}</code></td>
+                        </tr>
+                        <tr>
+                            <td>Creación Cuenta</td>
+                            <td>: <code>{{data.createdAt | date: 'short'}}</code></td>
+                        </tr>
+                        <tr>
+                            <td>Inicio de Sesion</td>
+                            <td>: <code>{{data.lastLoginAt | date: 'short'}}</code></td>
+                        </tr>
+                      </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
