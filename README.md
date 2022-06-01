@@ -2,7 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0.
 
-![Employee data](/images/Captura de pantalla (167).png?raw=true "Employee Data title")
+![Employee data](/images/Captura%20de%20pantalla%20(167).png?raw=true "Employee Data title")
+
+![Employee data](/images/Captura%20de%20pantalla%20(170).png?raw=true "Employee Data title")
 
 ## Development server
 
